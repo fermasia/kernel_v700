@@ -158,6 +158,9 @@ static struct dbs_tuners {
 	.optimal_freq = 0,
 	.input_boost = 0,
 };
+#if defined(CONFIG_MACH_MSM8974_B1_KR) || defined(CONFIG_MACH_MSM8974_B1W)
+extern int boost_freq;
+#endif
 
 static inline cputime64_t get_cpu_iowait_time(unsigned int cpu, cputime64_t *wall)
 {
