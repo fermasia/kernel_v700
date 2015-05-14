@@ -28,15 +28,15 @@
 
 #define MSM_HOTPLUG		"msm_hotplug"
 #define DEFAULT_UPDATE_RATE	HZ / 10
-#define START_DELAY		HZ * 20
-#define MIN_INPUT_INTERVAL	150 * 1000L
+#define START_DELAY		HZ * 10
+#define MIN_INPUT_INTERVAL	200 * 1000L
 #define DEFAULT_HISTORY_SIZE	10
-#define DEFAULT_DOWN_LOCK_DUR	1000
+#define DEFAULT_DOWN_LOCK_DUR	1500
 #define DEFAULT_BOOST_LOCK_DUR	4000 * 1000L
 #define DEFAULT_NR_CPUS_BOOSTED	2
 #define DEFAULT_MIN_CPUS_ONLINE	1
 #define DEFAULT_MAX_CPUS_ONLINE	NR_CPUS
-#define DEFAULT_FAST_LANE_LOAD	99
+#define DEFAULT_FAST_LANE_LOAD	85
 
 static unsigned int debug = 0;
 module_param_named(debug_mask, debug, uint, 0644);
@@ -232,11 +232,11 @@ struct loads_tbl {
 }
 
 static struct loads_tbl loads[] = {
-	LOAD_SCALE(400, 0),
-	LOAD_SCALE(65, 0),
-	LOAD_SCALE(120, 50),
-	LOAD_SCALE(190, 100),
-	LOAD_SCALE(410, 170),
+	LOAD_SCALE(385, 0),
+	LOAD_SCALE(60, 0),
+	LOAD_SCALE(110, 45),
+	LOAD_SCALE(175, 90),
+	LOAD_SCALE(400, 165),
 	LOAD_SCALE(0, 0),
 };
 
